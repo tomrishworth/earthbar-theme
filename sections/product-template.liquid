@@ -201,8 +201,9 @@
         <div class="product-single__description rte">
           {{ product.description }}
         </div>
-
-        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+        
+        {% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false %}
+        {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
         
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
